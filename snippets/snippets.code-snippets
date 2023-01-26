@@ -1,0 +1,257 @@
+{
+    "Init tempelate":{
+        "prefix": "!getStarted",
+        "body": [
+            "#include <bits/stdc++.h>",
+            "using namespace std;",
+            "typedef long long ll;",
+            "int main()",
+            "{",
+                "\tcin.tie(0);cin.sync_with_stdio(0);",
+                "\tcout.tie(0);cout.sync_with_stdio(0);",
+                "\tint t = 1;",
+                "\tcin >> t;",
+                "\twhile (t--)",
+                "\t{",
+                "\t\t$1",
+                "\t}",
+                "\treturn 0;",
+            "}",
+        ],
+        "description": "Basic start tempelate"
+    },
+    "head":{
+        "prefix": "!head",
+        "body": [
+            "/*",
+            "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+            "==> author:\t$1",
+            "==> date:\t\t$CURRENT_YEAR/$CURRENT_MONTH/$CURRENT_DATE/ $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND $CURRENT_DAY_NAME",
+            "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+            "*/"
+        ],
+        "description": "author of the code and the time"
+    },
+    "while":{
+        "prefix": "!while",
+        "body": [
+            "int i = 0;",
+            "while (i < 5$1) {",
+            "\tcout << i;",
+            "\ti++;",
+            "}",
+        ],
+        "description": "while loop"
+    },
+    "for":{
+        "prefix": "!for",
+        "body": [
+            "for (int i = 0; i < 5$1; i++) {",
+                "\tcout << i;",
+              "}",
+        ],
+        "description": "for loop"
+    },
+    "for each":{
+        "prefix": "!foreach",
+        "body": [
+            "int myNumbers[5] = {10, 20, 30, 40, 50};",
+            "for (int &number : myNumbers$1) {",
+            "\tcout << i;",
+            "}",
+        ],
+        "description": "for each"
+    },
+    "class":{
+        "prefix": "!class",
+        "body": [
+            "class Example$1 {",
+            "private:",
+            "\tint value;",
+            "",
+            "public:",
+            "\t// constructor",
+            "\tExample(int val) {",
+            "\tvalue = val;",
+            "\t}",
+            "",
+            "\t// methods",
+            "\tint getValue() {",
+            "\treturn value;",
+            "\t}",
+            "",
+            "\tvoid setValue(int val) {",
+            "\tvalue = val;",
+            "\t}",
+            "};",
+        ],
+        "description": "create a class"
+    },
+    "binary search":{
+        "prefix": "!bnSe",
+        "body": [
+            "int binarySearch(int arr[], int n, int x) {",
+            "\tint left = 0;",
+            "\tint right = n - 1;",
+            "\twhile (left <= right) {",
+            "\t\tint mid = left + (right - left) / 2;",
+            "\t\tif (arr[mid] == x) {",
+            "\t\t\treturn mid;",
+            "\t\t} else if (arr[mid] < x) {",
+            "\t\t\tleft = mid + 1;",
+            "\t\t} else {",
+            "\t\t\tright = mid - 1;",
+            "\t\t}",
+            "\t}",  
+            "\treturn -1;",
+            "}"
+        ],
+        "description": "binary search function"
+    },
+    "sieve":{
+        "prefix": "!sieve",
+        "body": [
+            "bool prime[arr_size];",
+            "void sieve()",
+            "{",
+                "\tmemset(prime, 1, sizeof(prime));",
+                "\tprime[0] = prime[1] = 0;",
+                "\tfor (ll i = 2; i * i <= x; i++)",
+                "\t{",
+                "\t\tif (prime[i])",
+                "\t\t{",
+                "\t\tfor (ll j = i * i; j <= x; j += i)",
+                "\t\t\tprime[j] = 0;",
+                "\t\t}",
+                "\t}",
+            "}",
+        ],
+        "description": "sieve method"
+    },
+    "prime check":{
+        "prefix": "!primeCk",
+        "body": [
+            "bool prime_check(int x)",
+            "{",
+            "\tif (x <= 1)",
+            "\t\treturn false;",
+            "\tfor (int i = 2; i * i <= x; i++)",
+            "\t{",
+            "\t\tif (x % i == 0)",
+            "\t\treturn false;",
+            "\t}",
+            "\treturn true;",
+            "}",
+        ],
+        "description": "prime check function"
+    },
+    "lenght of long long number":{
+        "prefix": "!lenNum",
+        "body": [
+            "long long findLen(long long n)",
+            "{",
+            "\treturn (long long)trunc(log10(n)) + 1;",
+            "}",
+        ],
+        "description": "lenght of number"
+    },
+    "Is power of 2":{
+        "prefix": "!ispow2",
+        "body": [
+            "bool IsPowerOfTwo(long long x)",
+            "{",
+                "\treturn (x != 0) && ((x & (x - 1)) == 0);",
+            "}",
+        ],
+        "description": "is power of 2 ?"
+    },
+    "fast power":{
+        "prefix": "!fastPow",
+        "body": [
+            "long long power(long long n, long long p)",
+            "{",
+                "\tif (p == 0)",
+                    "\t\t\treturn 1;",
+                "\tif (p == 1)",
+                    "\t\t\treturn n;",
+                "\tlong long rem = 1;",
+                "\twhile (p)",
+                "\t{",
+                    "\t\tif (p & 1)",
+                        "\t\t\trem = rem * n;",
+                    "\t\tn = n * n;",
+                    "\t\tp = p / 2;",
+                "\t}",
+                "\treturn rem;",
+           "}",
+        ],
+        "description": "fast power"
+    },
+    "NCR":{
+        "prefix": "!ncr",
+        "body": [
+            "long long printNcR(long long n, long long r)",
+            "{",
+                "\tlong long p = 1, k = 1;",
+                "\tif (n - r < r)",
+                    "\t\tr = n - r;",
+                "\tif (r != 0)",
+                "\t{",
+                    "\t\twhile (r)",
+                    "\t\t{",
+                    "\t\t\tp *= n;",
+                        "\t\t\tk *= r;",
+                        "\t\t\tll m = __gcd(p, k);",
+                        "\t\t\tp /= m;",
+                        "\t\t\tk /= m;",
+                        "\t\t\tn--;",
+                        "\t\t\tr--;",
+                    "\t\t}",
+                "\t}",
+                "\telse",
+                    "\t\tp = 1;",
+                "\treturn p;",
+            "}",
+        ],
+        "description": "NCR"
+    },
+    "euclidean distance":{
+        "prefix": "!eucDis",
+        "body": [
+            "double distanceBetween(long long x1, long long y1, long long x2, long long y2)",
+            "{",
+                "\treturn sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2) * 1.0);",
+            "}",
+        ],
+        "description": "euclidean distance"
+    },
+    "is power of number":{
+        "prefix": "!isPowOfNum",
+        "body": [
+            "bool isPowerof(long long num, long long base)",
+            "{",
+                "\tlong double log_num = log(num) / log(base);",
+                "\tif (fabs(log_num - round(log_num)) < 0.000001)",
+                "\t// if difference is less than 10^-5 then they are same number",
+                "\t{",
+                    "\t\treturn true;",
+                "\t}",
+                "\telse",
+                "\t{",
+                    "\t\treturn false;",
+                "\t}",
+            "}",
+        ],
+        "description": "is power of number ?"
+    },
+    "ifndef":{
+        "prefix": "!ifndef",
+        "body": [
+        "#ifndef ONLINE_JUDGE",
+            "\tfreopen(\"input.txt\", \"r\", stdin), freopen(\"output.txt\", \"w\", stdout);",
+        "#endif",
+        ],
+        "description": "add input files and output files"
+    },
+    
+}
